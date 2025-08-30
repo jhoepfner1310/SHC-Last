@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path fill="rgba(0, 120, 70, 0.5)" stroke-width="0.694" d="
+    M0,1
+    C25,5 75,12.5 100,5
+    L100,98
+    C98,98 15,90 0,98
+    Z
+  " />
+  <path stroke="rgba(0, 120, 70)" stroke-width="0.694" fill="transparent"
+  d="
+    M0,1
+    C25,5 75,12.5 100,5
+  "
+  />
+
+  <path stroke="rgba(0, 120, 70)" stroke-width="0.694" fill="transparent"
+  d="
+    M100,98
+    C98,98 15,90 0,98
+  "
+  />
+</svg>
