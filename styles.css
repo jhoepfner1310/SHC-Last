@@ -49,13 +49,6 @@ body {
     overflow-x: hidden;
 }
 
-/*Opener Sektion*/
-#opener img {
- height: 100%;
- width: 100%;
-}
-
-
 /*Deko-Elemente*/
 .circle-positioner{
     position: absolute;
@@ -194,7 +187,7 @@ p {
 
 #hero{
     justify-content: end;
-    padding-top: 7.5vmax;
+    padding-top: 12.5vmax;
 }
 
 .hero-wrapper h1{
@@ -348,8 +341,9 @@ body[data-theme="dark"] .cta-button-nav {
     /*margin-top: 2.5vh;*/
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2vh;
-    flex: 1 1 0;
+    width: 100%;
 }
 
 .hero-logo{
@@ -358,15 +352,14 @@ body[data-theme="dark"] .cta-button-nav {
     justify-content: center;
 }
 
-.hero-logo img{
+.hero-logo {
     background: transparent;
-    height: 100%;
     filter: drop-shadow(0 8.5px 4px rgba(0, 0, 0, 0.4));  
 }
 
 .quote-box {
     min-height: 17.5vh;
-    /*border: 2.5px solid #000;*/
+    width: 100%;
     padding: 1.5rem;
     border-radius: var(--border-radius);
     display: flex;
@@ -375,7 +368,6 @@ body[data-theme="dark"] .cta-button-nav {
     gap: 7vmin;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
     background: rgba(255, 255, 255, 0.98);
-    /*margin-bottom: 5vh;*/
 }
 
 .quote-text{
@@ -399,14 +391,17 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .hero-bottom {
-    flex: 1 1 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 2vh;
-    height: 90vh;
+}
+
+.hero-bottom h1 {
+    display: none;
 }
 
 .hero-bottom img {
@@ -768,6 +763,7 @@ body[data-theme="dark"] .cta-button-nav {
 @media (min-width: 768px) {
 
     #hero{
+        justify-content: space-evenly;
         align-items: start;
     }
 
@@ -1049,17 +1045,17 @@ body[data-theme="dark"] .cta-button-nav {
     /* Hero Section */
     .hero-wrapper {
         flex-direction: column;
-        align-items: start;
-        gap: 7.5vw;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
     .hero-top {
         display: flex;
-        width: 40vw;
     }
 
     .quote-box{
         min-height: 20vh;
+        min-width: 443px;
     }
 
     .hero-bottom {
@@ -1147,6 +1143,13 @@ body[data-theme="dark"] .cta-button-nav {
         width: 32.5vw;
     }
 
+}
+
+@media (max-width: 1084px){
+    /*hero-setion für kleine Bildschrime*/
+    .hero-bottom p {
+        display: none;
+    }
 }
 
 /* Large Desktop Styles */
@@ -1280,11 +1283,6 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 @media (max-width: 600px) {
-
-    /*hero-setion für kleine Bildschrime*/
-    .hero-bottom p {
-        display: none;
-    }
 
     /*contact-section für kleine Bildschirme*/
     #contact h2 {
