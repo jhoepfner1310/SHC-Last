@@ -61,8 +61,11 @@ body {
     position: absolute;
     z-index: -10;
     overflow: hidden;
+    display: flex;
+    justify-content: right;
     width: 100%;
-    aspect-ratio: 1 / 2 ;
+    height: 100%;
+    margin-top: 10vmax;
 }
 
 .hero-circle {
@@ -70,11 +73,11 @@ body {
     background-image: url("./images/homepage-opener.png");
     background-size: 50% 50%;
     border-radius: 50%;
-    height: 100vmax;
+    height: 200vmin;
     aspect-ratio: 1 / 1;
     position: absolute;
-    transform: translateY(-40%);
     z-index: -10;
+    transform: translateX(50%) translateY(-50%);
 }
 
 
@@ -968,11 +971,15 @@ body[data-theme="dark"] .cta-button-nav {
         top: 0;
         left: 0;
         width: 100%;
-        height: 110px;
+        height: 8.5vmax;
         background-color: var(--white);
         box-shadow: var(--shadow);
         z-index: 1000;
         padding: 0 5vw;
+    }
+
+    .circle-positioner{
+        margin-top: 7vmax;
     }
 
     .desktop-nav-wrapper {
