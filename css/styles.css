@@ -66,7 +66,7 @@ body {
     background-image: url("../images/homepage-opener.png");
     background-size: 50% 50%;
     border-radius: 50%;
-    height: 200vmin;
+    height: 190vmin;
     aspect-ratio: 1 / 1;
     position: absolute;
     z-index: -10;
@@ -953,6 +953,24 @@ body[data-theme="dark"] .cta-button-nav {
 
 .social-icons a:hover {
     opacity: 1;
+}
+
+@media(min-width: 464px) and (max-width: 1200px) {
+
+    #hero{
+        justify-content: end;
+    }
+
+    .hero-logo{
+        display: none;
+    }
+
+    @media (min-width: 530px) {
+        .hero-circle{
+            height: 130vmax;
+        }
+    }
+    
 }
 
 @media (min-width: 570px) and (max-width: 768px){
