@@ -63,7 +63,7 @@ body {
 
 .hero-circle {
     border: 5px solid var(--grün);
-    background-image: url("../images/homepage-opener.png");
+    background-image: url("../images/homepage-opener.jpg");
     background-size: 50% 50%;
     border-radius: 50%;
     height: 200vmin;

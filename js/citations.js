@@ -37,7 +37,7 @@ function showNextQuote() {
     authorElement.style.opacity = 1;
     
     if(firstCycle){
-      setInterval(setGap());
+      setInterval(setGap(), 6000);
       firstCycle = false;
     }
 
