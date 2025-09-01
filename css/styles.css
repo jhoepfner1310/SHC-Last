@@ -191,7 +191,7 @@ p {
 }
 
 .hero-wrapper h1{
-    font-size: 1.825rem;
+    font-size: 3.5vmax;
 }
 
 /* Buttons */
@@ -211,7 +211,7 @@ p {
     transition: transform 0.35s ease-in-out;
     text-align: center;
     text-decoration: none;
-    width: 50%;
+    width: 60%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
 }
 
@@ -354,7 +354,7 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .hero-logo{
-    height: 17.5vmax;
+    height: 16vmax;
     display: flex;
     justify-content: center;
 }
@@ -365,13 +365,12 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .quote-box {
-    min-height: 17.5vh;
+    min-height: 20vmax;
     width: 100%;
-    padding: 1.5rem;
     border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
     background: rgba(255, 255, 255, 0.98);
 }
@@ -1085,7 +1084,7 @@ body[data-theme="dark"] .cta-button-nav {
     }
 
     .quote-box{
-        min-height: 20vh;
+        min-height: 12.5vmax;
         min-width: 443px;
     }
 

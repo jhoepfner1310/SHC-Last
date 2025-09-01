@@ -37,7 +37,7 @@ function showNextQuote() {
     authorElement.style.opacity = 1;
     
     if(firstCycle){
-      setInterval(setGap(), 6000);
+      setInterval(setGap(),setPadding(), 6000);
       firstCycle = false;
     }
 
@@ -46,6 +46,10 @@ function showNextQuote() {
 
 function setGap() {
   quoteBox.style.gap = "7vmin";
+}
+
+function setPadding(){
+  quoteBox.style.padding = "1.5rem";
 }
 
 // Wechsel alle 5 Sekunden
