@@ -1,4 +1,4 @@
-const COCKPIT_API_URL = "https://admin.shc-consulting.eu"
+const COCKPIT_API_URL = "https://cms-shc.eu/api"
 
 class CockpitAPI {
   constructor() {
@@ -74,3 +74,24 @@ class CockpitAPI {
 
 // one global cockpit instance
 const cockpit = new CockpitAPI();
+
+//data-field Selector
+async function loadCMS(singletonName) {
+  try {
+    const data = await cockpit.getSingleton(singletonName);
+
+    document.querySelectorAll("[data-field]").forEach(el => {
+      const field = el.dataset.field;
+
+      if (data[field] !== undefined) {
+        if (el.tagName === "IMG") {
+          el.src = data[field].path || data[field];
+        } else {
+          el.textContent = data[field];
+        }
+      }
+    });
+  } catch (err) {
+    console.error(`Failed to load singleton "${singletonName}":`, err);
+  }
+}

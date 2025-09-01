@@ -1,22 +1,26 @@
 const quoteElement = document.querySelector('.quote-text');
 const authorElement = document.querySelector('.quote-author');
+const quoteBox = document.querySelector('.quote-box');
+const welcomeText = document.getElementById('welcome');
 
 const quotes = [
   {
-    text: "„ Ihr Partner für nachhaltige Unternehmensberatung “",
+    text: "„ Ihr Partner für nachhaltige Unternehmensberatung ",
     author: "— SHC Team"
   },
   {
-    text: "„ Strategisch. Digital. Nachhaltig “",
+    text: "„ Strategisch. Digital. Nachhaltig ",
     author: "— Beraterteam"
   },
   {
-    text: "„ Verantwortungsvoll beraten heißt Zukunft gestalten “",
+    text: "„ Verantwortungsvoll beraten heißt Zukunft gestalten ",
     author: "— SHC Insights"
   }
 ];
 
 let index = 0;
+
+let firstCycle = true;
 
 function showNextQuote() {
   // Ausblenden
@@ -31,14 +35,18 @@ function showNextQuote() {
 
     quoteElement.style.opacity = 1;
     authorElement.style.opacity = 1;
+    
+    if(firstCycle){
+      setInterval(setGap());
+      firstCycle = false;
+    }
+
   }, 1500);
 }
 
-// Initial
-quoteElement.textContent = quotes[0].text;
-authorElement.textContent = quotes[0].author;
-quoteElement.style.opacity = 1;
-authorElement.style.opacity = 1;
+function setGap() {
+  quoteBox.style.gap = "7vmin";
+}
 
 // Wechsel alle 5 Sekunden
 setInterval(showNextQuote, 6000);

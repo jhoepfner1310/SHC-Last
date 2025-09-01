@@ -11,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
 </head>
 
-<body>
-        
+<body onload="loadCMS('home')">
     <div class="circle-positioner">
         <div class="hero-circle"></div>
     </div>
@@ -90,20 +89,17 @@
             <div class="hero-top">
                 <div class="quote-box">
                     <blockquote class="quote-text">
-                        „ Ihr Partner für nachhaltige Unternehmensberatung “
+                        <!--Wlecome schrift als Initaile Überschrift-->
+                        <h1 id="welcome">Wilkommen bei <br>
+                            <span class="shc"> <span class="s">S</span><span class="h">H</span><span class="c">C</span>
+                            </span> 
+                            Consulting</h1>
+
                     </blockquote>
-                      <blockquote class="quote-author">
-                        — Autor
-                      </blockquote>
+                      <blockquote class="quote-author"></blockquote>
                 </div>
             </div>
             <div class="hero-bottom">
-
-                <h1>Wilkommen bei <br>
-                <span class="shc"> <span class="s">S</span><span class="h">H</span><span class="c">C</span>
-                </span> 
-                Consulting</h1>
-
                 <div class="cta-container">
                 <a href="#about" class="cta-button">Mehr erfahren</a>
                 </div>
@@ -243,7 +239,7 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <img src="/images/about-us.png" alt="Dr. Sarah Müller" class="flip-card-image">
-                        <h3 id="flip-card-2-name">Dr. Sarah Müller</h3>
+                        <h3 data-field="flip-card-1-name">Dr. Sarah Müller</h3>
                         <p>Senior Beraterin</p>
                     </div>
                     <div class="flip-card-back">
@@ -261,7 +257,7 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <img src="/images/about-us-2.png" alt="Michael Weber" class="flip-card-image">
-                        <h3>Michael Weber</h3>
+                        <h3 data-field="flip-card-2-name">Michael Weber</h3>
                         <p>Lead Consultant</p>
                     </div>
                     <div class="flip-card-back">
@@ -349,7 +345,6 @@
     <script src="./js/darkmode.js"></script>
     <script src="./js/scroll-reveal.js"></script>
     <script src="./js/cms/cockpit.js"></script>
-    <script src="./js/cms/index-cms.js"></script>
 
 </body>
 </html> 
