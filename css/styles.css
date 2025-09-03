@@ -52,7 +52,6 @@ body {
 /*Deko-Elemente*/
 .circle-positioner{
     position: absolute;
-    z-index: -10;
     overflow: hidden;
     display: flex;
     justify-content: right;
@@ -69,9 +68,457 @@ body {
     height: 195vmin;
     aspect-ratio: 1 / 1;
     position: absolute;
-    z-index: -10;
     transform: translateX(50%) translateY(-50%);
     box-shadow: -10px 10px 6px rgba(0, 0, 0, 0.125);
+}
+
+/* ===== HINTERGRUNDELEMENTE ===== */
+
+/* Basis-Styling für alle Hintergrundelemente */
+.bg-element {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Spezifische Klassen für verschiedene Formen */
+.bg-circle-orange {
+    border: 3px solid var(--orange);
+    border-radius: 50%;
+}
+
+.bg-circle-green {
+    border: 3px solid var(--grün);
+    border-radius: 50%;
+}
+
+.bg-triangle-orange {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 85px solid var(--orange);
+}
+
+.bg-triangle-green {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 85px solid var(--grün);
+}
+
+.bg-triangle-green-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 85px solid var(--grün);
+}
+
+.bg-triangle-orange-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 85px solid var(--orange);
+}
+
+.bg-square-orange {
+    background: var(--orange);
+    transform: rotate(45deg);
+}
+
+.bg-square-green {
+    background: var(--grün);
+    transform: rotate(45deg);
+}
+
+.bg-hexagon-orange {
+    background: var(--orange);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.bg-hexagon-green {
+    background: var(--grün);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.bg-line-orange {
+    background: linear-gradient(90deg, var(--leicht-orange), var(--orange), var(--leicht-orange));
+    height: 2px;
+}
+
+.bg-line-green {
+    background: linear-gradient(90deg, transparent, var(--grün), transparent);
+    height: 2px;
+}
+
+/* ===== HERO HINTERGRUNDELEMENTE ===== */
+.bg-hero-circle-orange-1 {
+    bottom: 6%;
+    left: 0%;
+    width: 200px;
+    height: 200px;
+    opacity: 0.25;
+}
+
+.bg-hero-triangle-green-1 {
+    bottom: 20%;
+    left: 10%;
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 100px solid var(--grün);
+    opacity: 0.3;
+}
+
+.bg-hero-square-orange-1 {
+    top: 30%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    opacity: 0.25;
+}
+
+.bg-hero-triangle-green-2 {
+    top: 60%;
+    right: 5%;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid var(--grün);
+    opacity: 0.28;
+}
+
+.bg-hero-line-orange-1 {
+    top: 57.5%;
+    left: -15%;
+    width: 130%;
+    height: 2px;
+    transform: rotate(10deg);
+    opacity: 0.2;
+}
+
+.bg-hero-circle-green-1-positioner {
+    position: absolute;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    bottom: 0%;
+    right: 0%;
+}
+
+.bg-hero-circle-green-1 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--grün);
+    opacity: 0.2;
+    transform: translateX(50%);
+}
+
+/* ===== SERVICES HINTERGRUNDELEMENTE ===== */
+.bg-services-hexagon-orange-1 {
+    top: 40%;
+    left: 5%;
+    width: 100px;
+    height: 115px;
+    opacity: 0.3;
+}
+
+.bg-services-line-green-1 {
+    top: 60%;
+    left: -10%;
+    width: 120%;
+    height: 2px;
+    transform: rotate(-20deg);
+    opacity: 0.25;
+}
+
+.bg-services-circle-green-1 {
+    top: 20%;
+    right: 10%;
+    width: 120px;
+    height: 120px;
+    opacity: 0.25;
+}
+
+.bg-services-square-orange-1 {
+    bottom: 10%;
+    right: 20%;
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+}
+
+/* ===== ABOUT HINTERGRUNDELEMENTE ===== */
+.bg-about-square-green-1 {
+    top: 25%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    opacity: 0.3;
+}
+
+.bg-about-line-orange-1 {
+    top: 20%;
+    left: -10%;
+    width: 120%;
+    height: 2px;
+    transform: rotate(15deg);
+    opacity: 0.25;
+}
+
+.bg-about-triangle-green-1 {
+    top: 60%;
+    left: 5%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 85px solid var(--grün);
+    opacity: 0.3;
+}
+
+.bg-about-hexagon-orange-1 {
+    bottom: 20%;
+    right: 5%;
+    width: 90px;
+    height: 90px;
+    opacity: 0.25;
+}
+
+.bg-about-circle-green-1 {
+    top: 10%;
+    right: -10%;
+    width: 120px;
+    height: 120px;
+    opacity: 0.2;
+}
+
+.bg-about-square-orange-1 {
+    bottom: 10%;
+    left: -10%;
+    width: 70px;
+    height: 70px;
+    opacity: 0.25;
+}
+
+/* ===== WHY US HINTERGRUNDELEMENTE ===== */
+.bg-why-us-square-orange-1 {
+    top: 15%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    opacity: 0.3;
+}
+
+.bg-why-us-triangle-orange-1 {
+    top: 35%;
+    right: 15%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 85px solid var(--orange);
+    opacity: 0.25;
+}
+
+.bg-why-us-circle-green-1 {
+    top: 65%;
+    left: 15%;
+    width: 100px;
+    height: 100px;
+    opacity: 0.2;
+}
+
+.bg-why-us-triangle-green-1 {
+    bottom: 25%;
+    right: 10%;
+    width: 0;
+    height: 0;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-top: 75px solid var(--grün);
+    opacity: 0.3;
+}
+
+.bg-why-us-hexagon-orange-1 {
+    bottom: 15%;
+    left: 20%;
+    width: 70px;
+    height: 80px;
+    opacity: 0.25;
+}
+
+.bg-why-us-triangle-green-2 {
+    top: 45%;
+    left: -10%;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid var(--grün);
+    opacity: 0.2;
+}
+
+.bg-why-us-square-green-1 {
+    bottom: 35%;
+    right: -10%;
+    width: 60px;
+    height: 60px;
+    opacity: 0.25;
+}
+
+.bg-why-us-triangle-orange-2 {
+    top: 75%;
+    right: -15%;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 60px solid var(--orange);
+    opacity: 0.2;
+}
+
+/* ===== CONTACT HINTERGRUNDELEMENTE ===== */
+.bg-contact-triangle-green-1 {
+    top: 20%;
+    left: 15%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 85px solid var(--grün);
+    opacity: 0.3;
+}
+
+.bg-contact-line-orange-1 {
+    top: 40%;
+    left: -15%;
+    width: 130%;
+    height: 2px;
+    transform: rotate(25deg);
+    opacity: 0.2;
+}
+
+.bg-contact-square-orange-1 {
+    top: 60%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    opacity: 0.25;
+}
+
+.bg-contact-hexagon-green-1 {
+    bottom: 30%;
+    left: 20%;
+    width: 90px;
+    height: 100px;
+    opacity: 0.2;
+}
+
+.bg-contact-circle-orange-1 {
+    bottom: 15%;
+    right: 15%;
+    width: 100px;
+    height: 100px;
+    opacity: 0.25;
+}
+
+.bg-contact-square-green-1 {
+    top: 80%;
+    left: -10%;
+    width: 70px;
+    height: 70px;
+    opacity: 0.2;
+}
+
+.bg-contact-triangle-orange-1 {
+    bottom: 45%;
+    right: -15%;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 70px solid var(--orange);
+    opacity: 0.25;
+}
+
+.bg-contact-hexagon-green-2 {
+    top: 35%;
+    right: -10%;
+    width: 60px;
+    height: 70px;
+    opacity: 0.2;
+}
+
+/* ===== QUALIFICATIONS HINTERGRUNDELEMENTE ===== */
+.bg-qualifications-circle-green-1 {
+    top: 15%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    opacity: 0.25;
+}
+
+.bg-qualifications-triangle-orange-1 {
+    top: 35%;
+    right: 15%;
+    width: 0;
+    height: 0;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 75px solid var(--orange);
+    opacity: 0.3;
+}
+
+.bg-qualifications-square-green-1 {
+    top: 55%;
+    left: 20%;
+    width: 70px;
+    height: 70px;
+    opacity: 0.2;
+}
+
+.bg-qualifications-hexagon-orange-1 {
+    bottom: 25%;
+    right: 10%;
+    width: 80px;
+    height: 90px;
+    opacity: 0.25;
+}
+
+.bg-qualifications-triangle-green-1 {
+    bottom: 45%;
+    left: -10%;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 70px solid var(--grün);
+    opacity: 0.2;
+}
+
+.bg-qualifications-line-orange-1 {
+    top: 70%;
+    left: -15%;
+    width: 130%;
+    height: 2px;
+    transform: rotate(-30deg);
+    opacity: 0.15;
+}
+
+.bg-qualifications-line-green-1 {
+    bottom: 15%;
+    right: -15%;
+    width: 130%;
+    height: 2px;
+    transform: rotate(20deg);
+    opacity: 0.12;
 }
 
 /* Wrapper */
@@ -669,6 +1116,14 @@ body[data-theme="dark"] .cta-button-nav {
         align-items: start;
     }
 
+    .bg-hero-circle-green-1-positioner {
+        right: 40%;
+    }
+
+    .bg-hero-circle-green-1 {
+        transform: translateX(0);
+    }
+
     .hero-wrapper{
         gap: 5vh;
     }
@@ -832,7 +1287,6 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .footer-stamp {
-    height: 100px;
     background-color: rgb(0, 84, 49);
     margin-top: 2rem;
     display: flex;
@@ -843,6 +1297,7 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .footer-stamp p {
+    text-align: center;
     color: var(--text-color);
 }
 
@@ -1618,439 +2073,6 @@ html {
 .scroll-reveal.cta-button:hover {
     background-color: var(--grün) !important;
     transform: scale(1.05) !important;
-}
-
-/* ===== HINTERGRUNDELEMENTE ===== */
-
-/* Basis-Styling für alle Hintergrundelemente */
-.bg-element {
-    position: absolute;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Spezifische Klassen für verschiedene Formen */
-.bg-circle-orange {
-    border: 3px solid var(--orange);
-    border-radius: 50%;
-}
-
-.bg-circle-green {
-    border: 3px solid var(--grün);
-    border-radius: 50%;
-}
-
-.bg-triangle-orange {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 85px solid var(--orange);
-}
-
-.bg-triangle-green {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 85px solid var(--grün);
-}
-
-.bg-square-orange {
-    background: var(--orange);
-    transform: rotate(45deg);
-}
-
-.bg-square-green {
-    background: var(--grün);
-    transform: rotate(45deg);
-}
-
-.bg-hexagon-orange {
-    background: var(--orange);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
-.bg-hexagon-green {
-    background: var(--grün);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
-.bg-line-orange {
-    background: linear-gradient(90deg, var(--leicht-orange), var(--orange), var(--leicht-orange));
-    height: 2px;
-}
-
-.bg-line-green {
-    background: linear-gradient(90deg, transparent, var(--grün), transparent);
-    height: 2px;
-}
-
-/* ===== HERO HINTERGRUNDELEMENTE ===== */
-.bg-hero-circle-orange-1 {
-    bottom: 0%;
-    left: 0%;
-    width: 200px;
-    height: 200px;
-    opacity: 0.25;
-}
-
-.bg-hero-triangle-green-1 {
-    bottom: 20%;
-    left: 10%;
-    width: 0;
-    height: 0;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    border-top: 100px solid var(--grün);
-    opacity: 0.3;
-}
-
-.bg-hero-square-orange-1 {
-    top: 30%;
-    left: 5%;
-    width: 80px;
-    height: 80px;
-    opacity: 0.25;
-}
-
-.bg-hero-triangle-green-2 {
-    top: 60%;
-    right: 5%;
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom: 70px solid var(--grün);
-    opacity: 0.28;
-}
-
-.bg-hero-line-orange-1 {
-    top: 55%;
-    left: -15%;
-    width: 130%;
-    height: 2px;
-    transform: rotate(10deg);
-    opacity: 0.2;
-}
-
-.bg-hero-circle-green-1-positioner {
-    position: absolute;
-    overflow: hidden;
-    width: 120px;
-    height: 120px;
-    bottom: 0%;
-    right: 0%;
-}
-
-.bg-hero-circle-green-1 {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border: 2px solid var(--grün);
-    opacity: 0.2;
-    transform: translateX(50%) translateY(50%);
-}
-
-/* ===== SERVICES HINTERGRUNDELEMENTE ===== */
-.bg-services-hexagon-orange-1 {
-    top: 40%;
-    left: 5%;
-    width: 100px;
-    height: 115px;
-    opacity: 0.3;
-}
-
-.bg-services-line-green-1 {
-    top: 60%;
-    left: -10%;
-    width: 120%;
-    height: 2px;
-    transform: rotate(-20deg);
-    opacity: 0.25;
-}
-
-.bg-services-circle-green-1 {
-    top: 20%;
-    right: 10%;
-    width: 120px;
-    height: 120px;
-    opacity: 0.25;
-}
-
-.bg-services-square-orange-1 {
-    bottom: 10%;
-    right: 20%;
-    width: 60px;
-    height: 60px;
-    opacity: 0.3;
-}
-
-/* ===== ABOUT HINTERGRUNDELEMENTE ===== */
-.bg-about-square-green-1 {
-    top: 25%;
-    right: 10%;
-    width: 80px;
-    height: 80px;
-    opacity: 0.3;
-}
-
-.bg-about-line-orange-1 {
-    top: 20%;
-    left: -10%;
-    width: 120%;
-    height: 2px;
-    transform: rotate(15deg);
-    opacity: 0.25;
-}
-
-.bg-about-triangle-green-1 {
-    top: 60%;
-    left: 5%;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 85px solid var(--grün);
-    opacity: 0.3;
-}
-
-.bg-about-hexagon-orange-1 {
-    bottom: 20%;
-    right: 5%;
-    width: 90px;
-    height: 90px;
-    opacity: 0.25;
-}
-
-.bg-about-circle-green-1 {
-    top: 10%;
-    right: -10%;
-    width: 120px;
-    height: 120px;
-    opacity: 0.2;
-}
-
-.bg-about-square-orange-1 {
-    bottom: 10%;
-    left: -10%;
-    width: 70px;
-    height: 70px;
-    opacity: 0.25;
-}
-
-/* ===== WHY US HINTERGRUNDELEMENTE ===== */
-.bg-why-us-square-orange-1 {
-    top: 15%;
-    left: 10%;
-    width: 80px;
-    height: 80px;
-    opacity: 0.3;
-}
-
-.bg-why-us-triangle-orange-1 {
-    top: 35%;
-    right: 15%;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 85px solid var(--orange);
-    opacity: 0.25;
-}
-
-.bg-why-us-circle-green-1 {
-    top: 65%;
-    left: 15%;
-    width: 100px;
-    height: 100px;
-    opacity: 0.2;
-}
-
-.bg-why-us-triangle-green-1 {
-    bottom: 25%;
-    right: 10%;
-    width: 0;
-    height: 0;
-    border-left: 45px solid transparent;
-    border-right: 45px solid transparent;
-    border-top: 75px solid var(--grün);
-    opacity: 0.3;
-}
-
-.bg-why-us-hexagon-orange-1 {
-    bottom: 15%;
-    left: 20%;
-    width: 70px;
-    height: 80px;
-    opacity: 0.25;
-}
-
-.bg-why-us-triangle-green-2 {
-    top: 45%;
-    left: -10%;
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom: 70px solid var(--grün);
-    opacity: 0.2;
-}
-
-.bg-why-us-square-green-1 {
-    bottom: 35%;
-    right: -10%;
-    width: 60px;
-    height: 60px;
-    opacity: 0.25;
-}
-
-.bg-why-us-triangle-orange-2 {
-    top: 75%;
-    right: -15%;
-    width: 0;
-    height: 0;
-    border-left: 35px solid transparent;
-    border-right: 35px solid transparent;
-    border-top: 60px solid var(--orange);
-    opacity: 0.2;
-}
-
-/* ===== CONTACT HINTERGRUNDELEMENTE ===== */
-.bg-contact-triangle-green-1 {
-    top: 20%;
-    left: 15%;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 85px solid var(--grün);
-    opacity: 0.3;
-}
-
-.bg-contact-line-orange-1 {
-    top: 40%;
-    left: -15%;
-    width: 130%;
-    height: 2px;
-    transform: rotate(25deg);
-    opacity: 0.2;
-}
-
-.bg-contact-square-orange-1 {
-    top: 60%;
-    right: 10%;
-    width: 80px;
-    height: 80px;
-    opacity: 0.25;
-}
-
-.bg-contact-hexagon-green-1 {
-    bottom: 30%;
-    left: 20%;
-    width: 90px;
-    height: 100px;
-    opacity: 0.2;
-}
-
-.bg-contact-circle-orange-1 {
-    bottom: 15%;
-    right: 15%;
-    width: 100px;
-    height: 100px;
-    opacity: 0.25;
-}
-
-.bg-contact-square-green-1 {
-    top: 80%;
-    left: -10%;
-    width: 70px;
-    height: 70px;
-    opacity: 0.2;
-}
-
-.bg-contact-triangle-orange-1 {
-    bottom: 45%;
-    right: -15%;
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-top: 70px solid var(--orange);
-    opacity: 0.25;
-}
-
-.bg-contact-hexagon-green-2 {
-    top: 35%;
-    right: -10%;
-    width: 60px;
-    height: 70px;
-    opacity: 0.2;
-}
-
-/* ===== QUALIFICATIONS HINTERGRUNDELEMENTE ===== */
-.bg-qualifications-circle-green-1 {
-    top: 15%;
-    left: 10%;
-    width: 100px;
-    height: 100px;
-    opacity: 0.25;
-}
-
-.bg-qualifications-triangle-orange-1 {
-    top: 35%;
-    right: 15%;
-    width: 0;
-    height: 0;
-    border-left: 45px solid transparent;
-    border-right: 45px solid transparent;
-    border-bottom: 75px solid var(--orange);
-    opacity: 0.3;
-}
-
-.bg-qualifications-square-green-1 {
-    top: 55%;
-    left: 20%;
-    width: 70px;
-    height: 70px;
-    opacity: 0.2;
-}
-
-.bg-qualifications-hexagon-orange-1 {
-    bottom: 25%;
-    right: 10%;
-    width: 80px;
-    height: 90px;
-    opacity: 0.25;
-}
-
-.bg-qualifications-triangle-green-1 {
-    bottom: 45%;
-    left: -10%;
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-top: 70px solid var(--grün);
-    opacity: 0.2;
-}
-
-.bg-qualifications-line-orange-1 {
-    top: 70%;
-    left: -15%;
-    width: 130%;
-    height: 2px;
-    transform: rotate(-30deg);
-    opacity: 0.15;
-}
-
-.bg-qualifications-line-green-1 {
-    bottom: 15%;
-    right: -15%;
-    width: 130%;
-    height: 2px;
-    transform: rotate(20deg);
-    opacity: 0.12;
 }
 
 /* Dark Mode für Hintergrundelemente */
