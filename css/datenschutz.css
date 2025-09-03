@@ -115,6 +115,7 @@ li {
 }
 
 .datenschutz-wrapper {
+    width: 95%;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
@@ -127,6 +128,7 @@ li {
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    width: 100%;
     padding: 2rem;
     margin-top: 2rem;
 }
@@ -211,53 +213,31 @@ li {
     }
 }
 
-/* Dark Mode Styles */
-.dark-mode {
-    --primary-color: #e0e0e0;
-    --text-color: #e0e0e0;
-    --white: #1a1a1a;
-    --light-gray: #2d2d2d;
-    --shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
+/* ===== DARK MODE STYLES ===== */
+/* Dark Mode über data-theme="dark" Attributselektoren */
+[data-theme="dark"] {
+    --dark-background-color: rgb(22, 40, 44) ;
+    --secondary-dark-color: rgb(44, 65, 68);
 }
 
-/* dark-mode Footer - inherited from styles.css */
-.dark-mode .footer-stamp p {
-    color: var(--text-color);
+body [data-theme="dark"] {
+    background-color: var(--dark-background-color);
 }
 
-.dark-mode .social-icons i {
-    color: var(--text-color);
+[data-theme="dark"] .datenschutz-content {
+    background-color: var(--secondary-dark-color);
 }
 
-.dark-mode body {
-    background-color: #4a4a4a;
+[data-theme="dark"] .datenschutz-info-item {
+    background-color: var(--dark-background-color);
+    color: white; 
 }
 
-.dark-mode html {
-    background-color: #4a4a4a;
+[data-theme="dark"] .datenschutz-info-item p {
+    color: white;
 }
 
-.dark-mode .section {
-    background-color: rgba(57, 57, 57, 0.925);
+[data-theme="dark"] .datenschutz-info-item li {
+    color: white;
 }
 
-.dark-mode .wrapper {
-    background-color: transparent;
-}
-
-.dark-mode .datenschutz-content {
-    background-color: #5a5a5a;
-}
-
-.dark-mode .datenschutz-info-item {
-    background-color: var(--card-color);
-    color: var(--text-color);
-}
-
-.dark-mode .datenschutz-privacy-section a {
-    color: var(--grün);
-}
-
-.dark-mode li {
-    color: var(--text-color);
-} 
