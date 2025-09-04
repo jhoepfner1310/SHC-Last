@@ -1676,7 +1676,8 @@ body[data-theme="dark"] .cta-button-nav {
 
 .theme-toggle-switch {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     width: 60px;
     height: 34px;
     cursor: pointer;
@@ -1718,6 +1719,47 @@ body[data-theme="dark"] .cta-button-nav {
 
 .theme-toggle-input:checked + .theme-toggle-slider:before {
     transform: translateX(26px);
+}
+
+/* Theme Icons */
+.theme-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    transition: 0.4s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.theme-icon-sun {
+    bottom: 4.5px;
+    left: 10px;
+}
+
+.theme-icon-moon {
+    right: 12px;
+}
+
+/* Icon states based on toggle position */
+.theme-toggle-input:checked ~ .theme-icon-sun {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.theme-toggle-input:checked ~ .theme-icon-moon {
+    color: #fff;
+    opacity: 1;
+}
+
+.theme-toggle-input:not(:checked) ~ .theme-icon-sun {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.theme-toggle-input:not(:checked) ~ .theme-icon-moon {
+    color: #fff;
+    opacity: 1;
 }
 
 /* Desktop Theme Switcher */
