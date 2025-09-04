@@ -884,11 +884,11 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 #service-icon-3 {
-    color: var(--rot);
+    color: var(--grün);
 }
 
 #service-icon-4 {
-    color: var(--grün);
+    color: var(--orange);
 }
 
 .service-content {
@@ -931,11 +931,11 @@ body[data-theme="dark"] .cta-button-nav {
 
 /* Individuelle Farben für Why-Us-Icons */
 #why-us-icon-1 {
-    color: var(--orange);
+    color: var(--grün);
 }
 
 #why-us-icon-2 {
-    color: var(--rot);
+    color: var(--orange);
 }
 
 #why-us-icon-3 {
@@ -1213,7 +1213,7 @@ body[data-theme="dark"] .cta-button-nav {
 
 /* Individuelle Farben für Contact-Icons */
 #contact-icon-1 {
-    color: var(--rot);
+    color: var(--grün);
 }
 
 #contact-icon-2 {
