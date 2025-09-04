@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--dependency für kursive Schrift-->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+
+    <!--E-mail-Formular script-tag-->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "mr4LwqPQy-oBkDeMU",
+        });
+    })();
+    </script>
 </head>
 
 <body onload="loadCMS('home')">
@@ -332,7 +344,7 @@
                     <input type="checkbox" id="privacy" name="privacy" required>
                     <label for="privacy">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und akzeptiere diese.</label>
                 </div>
-                <button type="submit">Nachricht senden</button>
+                <button type="button" onclick="sendMail()">Nachricht senden</button>
             </form>
         </div>
     </section>
@@ -378,6 +390,7 @@
     <script src="./js/darkmode.js"></script>
     <script src="./js/scroll-reveal.js"></script>
     <script src="./js/cms/cockpit.js"></script>
+    <script src="./js/email.js"></script>
 
 </body>
 </html> 
