@@ -23,7 +23,7 @@
     </script>
 </head>
 
-<body onload="loadCMS('home')">
+<body onload="loadCMS('home'); loadCollection('serviceCards'); loadCMS('aboutUs')">
 
     <div class="circle-positioner">
         <div class="hero-circle"></div>
@@ -147,13 +147,14 @@
         
         <h2 class="scroll-reveal">Unsere Services</h2>
         <div class="wrapper services-wrapper">
+
             <div class="service-card scroll-reveal">
                 <div class="service-icon" id="service-icon-1">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Strategische Beratung</h3>
-                    <p>Entwicklung maßgeschneiderter Strategien für Ihr Unternehmen</p>
+                    <h3 data-collection="serviceCards" data-field="0.Title"></h3>
+                    <p data-collection="serviceCards" data-field="0.content"></p>
                 </div>
             </div>
             <div class="service-card scroll-reveal">
@@ -161,8 +162,8 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Organisationsentwicklung</h3>
-                    <p>Optimierung Ihrer Unternehmensstruktur und Prozesse</p>
+                    <h3 data-collection="serviceCards" data-field="1.Title"></h3>
+                    <p data-collection="serviceCards" data-field="1.content"></p>
                 </div>
             </div>
             <div class="service-card scroll-reveal">
@@ -170,8 +171,8 @@
                     <i class="fas fa-lightbulb"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Innovationsmanagement</h3>
-                    <p>Förderung von Innovation und digitaler Transformation</p>
+                    <h3 data-collection="serviceCards" data-field="2.Title"></h3>
+                    <p data-collection="serviceCards" data-field="2.content"></p>
                 </div>
             </div>
             <div class="service-card scroll-reveal">
@@ -179,8 +180,8 @@
                     <i class="fas fa-handshake"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Change Management</h3>
-                    <p>Begleitung von Veränderungsprozessen in Ihrem Unternehmen</p>
+                    <h3 data-collection="serviceCards" data-field="3.Title"></h3>
+                    <p data-collection="serviceCards" data-field="3.content"></p>
                 </div>
             </div>
         </div>
@@ -203,8 +204,8 @@
                 <div class="about-icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <h3>Ihre Partner für nachhaltigen Erfolg</h3>
-                <p>Bei SHC Consulting verbinden wir jahrelange Erfahrung mit innovativen Lösungsansätzen. Unser Team aus erfahrenen Beratern unterstützt Sie bei der Entwicklung und Umsetzung Ihrer Unternehmensziele.</p>
+                <h3 data-field="aboutUsTitle">Ihre Partner für nachhaltigen Erfolg</h3>
+                <p data-field="aboutUsContent">Bei SHC Consulting verbinden wir jahrelange Erfahrung mit innovativen Lösungsansätzen. Unser Team aus erfahrenen Beratern unterstützt Sie bei der Entwicklung und Umsetzung Ihrer Unternehmensziele.</p>
             </div>
         </div>
     </section>

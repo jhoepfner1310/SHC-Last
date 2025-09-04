@@ -1191,6 +1191,7 @@ body[data-theme="dark"] .cta-button-nav {
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
+    justify-content: space-evenly;
     min-height: 250px;
     background-color: var(--white);
     border-radius: var(--border-radius);

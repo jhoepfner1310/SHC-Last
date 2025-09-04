@@ -1,4 +1,4 @@
-const COCKPIT_API_URL = "https://cms-shc.eu/api"
+const COCKPIT_API_URL = "http://shc-cms.eu/api"
 
 class CockpitAPI {
   constructor() {
@@ -93,5 +93,37 @@ async function loadCMS(singletonName) {
     });
   } catch (err) {
     console.error(`Failed to load singleton "${singletonName}":`, err);
+  }
+}
+
+// Collection loader using existing API methods
+async function loadCollection(collectionName) {
+  try {
+    const items = await cockpit.getItems(collectionName, {
+      sort: { order: 1 } // Sort by order field ascending
+    });
+
+    // Find all elements with data-collection attribute matching this collection
+    document.querySelectorAll(`[data-collection="${collectionName}"]`).forEach(el => {
+      const field = el.dataset.field;
+      
+      // Parse index.fieldname format (e.g., "0.title", "1.content")
+      if (field && field.includes('.')) {
+        const [indexStr, fieldName] = field.split('.');
+        const index = parseInt(indexStr);
+        
+        // Check if we have an item at this index
+        if (items[index] && items[index][fieldName] !== undefined) {
+          if (el.tagName === "IMG") {
+            el.src = items[index][fieldName].path || items[index][fieldName];
+            el.alt = items[index][fieldName].title || '';
+          } else {
+            el.textContent = items[index][fieldName];
+          }
+        }
+      }
+    });
+  } catch (err) {
+    console.error(`Failed to load collection "${collectionName}":`, err);
   }
 }
