@@ -19,9 +19,7 @@ function initializeQuotes(quotesData) {
   }));
   
   //quotes anzeigen 
-  setTimeout( () => {
-    setInterval(showNextQuote, 6000);
-  }, 6000);
+  setInterval(showNextQuote, 6000);
   
 }
 

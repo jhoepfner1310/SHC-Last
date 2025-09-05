@@ -1,4 +1,4 @@
-const COCKPIT_API_URL = "http://shc-cms.eu/api"
+const COCKPIT_API_URL = "https://shc-cms.eu/api"
 
 class CockpitAPI {
   constructor() {
