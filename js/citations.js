@@ -3,26 +3,33 @@ const authorElement = document.querySelector('.quote-author');
 const quoteBox = document.querySelector('.quote-box');
 const welcomeText = document.getElementById('welcome');
 
-const quotes = [
-  {
-    text: "„ Ihr Partner für nachhaltige Unternehmensberatung ",
-    author: "— SHC Team"
-  },
-  {
-    text: "„ Strategisch. Digital. Nachhaltig ",
-    author: "— Beraterteam"
-  },
-  {
-    text: "„ Verantwortungsvoll beraten heißt Zukunft gestalten ",
-    author: "— SHC Insights"
-  }
-];
-
+// Zitate werden über die bestehende loadCollection() Funktion geladen
+let quotes = [];
 let index = 0;
-
 let firstCycle = true;
 
+// Diese Funktion wird von loadCollection() aufgerufen
+function initializeQuotes(quotesData) {
+
+  
+  // Daten in das gewünschte Format umwandeln
+  quotes = quotesData.map(quote => ({
+    text: quote.text,
+    author: quote.author
+  }));
+  
+  //quotes anzeigen 
+  setTimeout( () => {
+    setInterval(showNextQuote, 6000);
+  }, 6000);
+  
+}
+
 function showNextQuote() {
+
+  // Nur weitermachen wenn Zitate vorhanden sind
+  if (quotes.length === 0) return;
+  
   // Ausblenden
   quoteElement.style.opacity = 0;
   authorElement.style.opacity = 0;
@@ -37,7 +44,8 @@ function showNextQuote() {
     authorElement.style.opacity = 1;
     
     if(firstCycle){
-      setInterval(setGap(),setPadding(), 6000);
+      setGap();
+      setPadding();
       firstCycle = false;
     }
 
@@ -52,8 +60,6 @@ function setPadding(){
   quoteBox.style.padding = "1.5rem";
 }
 
-// Wechsel alle 5 Sekunden
-setInterval(showNextQuote, 6000);
 
 
 

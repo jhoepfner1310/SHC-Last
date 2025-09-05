@@ -23,7 +23,7 @@
     </script>
 </head>
 
-<body onload="loadCMS('home'); loadCollection('serviceCards'); loadCMS('aboutUs')">
+<body onload="loadCMS('contactInfo'); loadCollection('serviceCards'); loadCollection('quotes'); loadCollection('qualificationsCardFront'); loadCollection('whyUs') ; loadCollection('qualificationsCardBack') ; loadCMS('aboutUs')">
 
     <div class="circle-positioner">
         <div class="hero-circle"></div>
@@ -229,8 +229,8 @@
                     <i class="fas fa-medal"></i>
                 </div>
                 <div class="why-us-content">
-                    <h3>Erfahrung</h3>
-                    <p>Über 20 Jahre Erfahrung in der Unternehmensberatung</p>
+                    <h3 data-collection="whyUs" data-field="0.whyUsTitle">Erfahrung</h3>
+                    <p data-collection="whyUs" data-field="0.whyUsContent">Über 20 Jahre Erfahrung in der Unternehmensberatung</p>
                 </div>
             </div>
             <div class="why-us-card scroll-reveal">
@@ -238,8 +238,8 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="why-us-content">
-                    <h3>Expertise</h3>
-                    <p>Hochqualifizierte Berater mit Branchenkenntnis</p>
+                    <h3 data-collection="whyUs" data-field="1.whyUsTitle">Expertise</h3>
+                    <p data-collection="whyUs" data-field="1.whyUsContent">Hochqualifizierte Berater mit Branchenkenntnis</p>
                 </div>
             </div>
             <div class="why-us-card scroll-reveal">
@@ -247,8 +247,8 @@
                     <i class="fas fa-heart"></i>
                 </div>
                 <div class="why-us-content">
-                    <h3>Leidenschaft</h3>
-                    <p>Engagement für den Erfolg unserer Kunden</p>
+                    <h3 data-collection="whyUs" data-field="2.whyUsTitle">Leidenschaft</h3>
+                    <p data-collection="whyUs" data-field="2.whyUsContent">Engagement für den Erfolg unserer Kunden</p>
                 </div>
             </div>
             <div class="why-us-card scroll-reveal">
@@ -256,8 +256,8 @@
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <div class="why-us-content">
-                    <h3>Zuverlässigkeit</h3>
-                    <p>Verlässliche Partnerschaft und langfristige Zusammenarbeit</p>
+                    <h3 data-collection="whyUs" data-field="3.whyUsTitle">Zuverlässigkeit</h3>
+                    <p data-collection="whyUs" data-field="3.whyUsContent">Verlässliche Partnerschaft und langfristige Zusammenarbeit</p>
                 </div>
             </div>
         </div>
@@ -280,13 +280,13 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <img src="./images/about-us-2.jpg" alt="Dr. Sarah Müller" class="flip-card-image">
-                        <h3 data-field="flip-card-1-name">Dr. Sarah Müller</h3>
-                        <p>Senior Beraterin</p>
+                        <h3 data-collection="qualificationsCardFront" data-field="0.qualificationsCardTitle">Dr. Sarah Müller</h3>
+                        <p data-collection="qualificationsCardFront" data-field="0.qualificationsCardContent">Senior Beraterin</p>
                     </div>
                     <div class="flip-card-back">
-                        <h3>Dr. Sarah Müller</h3>
+                        <h3 data-collection="qualificationsCardBack" data-field="0.qualificationsCardBackTitle">Dr. Sarah Müller</h3>
                         <ul>
-                            <li>PhD in Wirtschaftswissenschaften</li>
+                            <li data-collection="qualificationsCardBack" data-field="0.qualificationsCardBackContent"> PhD in Wirtschaftswissenschaften </li>
                             <li>15+ Jahre Beratungserfahrung</li>
                             <li>Spezialisierung: Strategische Planung</li>
                             <li>Zertifizierte Change Managerin</li>
@@ -298,13 +298,13 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <img src="./images/about-us-2.jpg" alt="Michael Weber" class="flip-card-image">
-                        <h3 data-field="flip-card-2-name">Michael Weber</h3>
-                        <p data-field="flip-card-2-paragraph">Lead Consultant</p>
+                        <h3 data-collection="qualificationsCardFront" data-field="1.qualificationsCardTitle">Michael Weber</h3>
+                        <p data-collection="qualificationsCardFront" data-field="1.qualificationsCardContent">Lead Consultant</p>
                     </div>
                     <div class="flip-card-back">
-                        <h3>Michael Weber</h3>
+                        <h3 data-collection="qualificationsCardBack" data-field="1.qualificationsCardBackTitle"> Michael Weber</h3>
                         <ul>
-                            <li>MBA in Business Administration</li>
+                            <li data-collection="qualificationsCardBack" data-field="1.qualificationsCardBackContent"> MBA in Business Administration</li>
                             <li>12+ Jahre Branchenerfahrung</li>
                             <li>Spezialisierung: Organisationsentwicklung</li>
                             <li>Agile Coach Zertifizierung</li>
@@ -331,9 +331,10 @@
         <div class="wrapper contact-wrapper">
             <div class="contact-map-info-wrapper">
                 <div class="contact-info scroll-reveal">
-                    <h3><i class="fas fa-map-marker-alt" id="contact-icon-1"></i> Standort</h3>
-                    <p><i class="fas fa-building" id="contact-icon-2"></i> Musterstraße 123<br>10115 Berlin<br>Deutschland</p>
-                    <p><i class="fas fa-phone" id="contact-icon-3"></i> Tel: +49 30 1234567<br><i class="fas fa-envelope" id="contact-icon-4"></i> E-Mail: info@shc-consulting.de</p>
+                    <h3> <i class="fas fa-map-marker-alt" id="contact-icon-1"></i> <span data-field="contactInfoTitle">Standort</span> </h3>
+                    <p><i class="fas fa-building" id="contact-icon-2"></i> <span data-field="contactInfoAdress">Musterstraße 123<br>10115 Berlin<br>Deutschland</span> </p>
+                    <p><i class="fas fa-phone" id="contact-icon-3"></i> <span data-field="contactInfoPhoneNumber">Tel: +49 30 1234567</span></p>
+                    <p><i class="fas fa-envelope" id="contact-icon-4"></i> <span data-field="contactInfoMail">E-Mail: info@shc-consulting.de</span></p>
                 </div>
                 <div class="contact-map scroll-reveal">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.5!2d13.4!3d52.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDMwJzAwLjAiTiAxM8KwMjQnMDAuMCJF!5e0!3m2!1sde!2sde!4v1234567890!5m2!1sde!2sde" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

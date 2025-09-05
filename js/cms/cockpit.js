@@ -103,6 +103,12 @@ async function loadCollection(collectionName) {
       sort: { order: 1 } // Sort by order field ascending
     });
 
+    // Spezielle Behandlung für quotes Collection
+    if (collectionName === 'quotes' && typeof initializeQuotes === 'function') {
+      initializeQuotes(items);
+      return; // Früh beenden, da quotes nicht über data-collection Attribute funktionieren
+    }
+
     // Find all elements with data-collection attribute matching this collection
     document.querySelectorAll(`[data-collection="${collectionName}"]`).forEach(el => {
       const field = el.dataset.field;

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let buttonClicked = false;
   
     menuButton.addEventListener('click', () => {
+
       if (!buttonClicked) {
         mobileMenu.style.opacity = "1";
         mobileMenu.style.zIndex = "500";
