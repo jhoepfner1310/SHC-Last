@@ -80,6 +80,7 @@ async function loadCMS(singletonName) {
   try {
     const data = await cockpit.getSingleton(singletonName);
 
+    // Handle data-field attributes (existing functionality)
     document.querySelectorAll("[data-field]").forEach(el => {
       const field = el.dataset.field;
 
@@ -91,6 +92,16 @@ async function loadCMS(singletonName) {
         }
       }
     });
+
+    // Handle data-href attributes for links
+    document.querySelectorAll("[data-href]").forEach(el => {
+      const field = el.dataset.href;
+
+      if (data[field] !== undefined) {
+        el.href = data[field]; // Only set href, keep existing content (icons, text)
+      }
+    });
+
   } catch (err) {
     console.error(`Failed to load singleton "${singletonName}":`, err);
   }
