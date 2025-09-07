@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="loadCMS('contactInfo');">
 
     <!--mobile-menu-full-Ansicht-->
     <div class="mobile-menu-full">
@@ -97,12 +97,10 @@
                     <h2>2. Verantwortliche Stelle</h2>
                     <div class="datenschutz-info-item">
                         <strong>SHC Consulting GmbH</strong><br>
-                        Musterstraße 12<br>
-                        12345 Berlin<br>
-                        Deutschland<br><br>
+                        <span data-field="contactInfoAdress">Musterstraße 123<br>10115 Berlin<br>Deutschland</span><br><br>
                         <strong>Vertretungsberechtigter:</strong> Max Mustermann<br>
-                        <strong>E-Mail:</strong> datenschutz@shc-consulting.de<br>
-                        <strong>Telefon:</strong> +49 123 456789
+                        <strong>E-Mail:</strong> <span data-field="contactInfoMail">E-Mail: info@shc-consulting.de</span><br>
+                        <strong>Telefon:</strong> <span data-field="contactInfoPhoneNumber">Tel: +49 30 1234567</span>
                     </div>
                 </div>
 
@@ -225,6 +223,7 @@
     </footer>
 
     <!--script-tag-->
+    <script src="./js/cms/cockpit.js"></script>
     <script src="./js/mobilemenu.js"></script>
     <script src="./js/darkmode.js"></script>
 

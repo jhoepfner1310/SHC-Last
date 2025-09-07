@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="loadCMS('contactInfo');">
 
     <!--mobile-menu-full-Ansicht-->
     <div class="mobile-menu-full">
@@ -90,9 +90,7 @@
                     <h2>Angaben gemäß § 5 TMG</h2>
                     <div class="impressum-info-item">
                         <strong>SHC Consulting GmbH</strong><br>
-                        Musterstraße 12<br>
-                        12345 Berlin<br>
-                        Deutschland
+                        <span data-field="contactInfoAdress">Musterstraße 123<br>10115 Berlin<br>Deutschland</span>
                     </div>
                 </div>
 
@@ -100,8 +98,8 @@
                     <h2>Kontakt</h2>
                     <div class="impressum-info-item">
                         <strong>Vertretungsberechtigter:</strong> Max Mustermann<br>
-                        <strong>Telefon:</strong> +49 123 456789<br>
-                        <strong>E-Mail:</strong> kontakt@shc-consulting.de
+                        <strong>Telefon:</strong> <span data-field="contactInfoPhoneNumber">Tel: +49 30 1234567</span><br>
+                        <strong>E-Mail:</strong> <span data-field="contactInfoMail">E-Mail: info@shc-consulting.de</span>
                     </div>
                 </div>
 
@@ -119,8 +117,7 @@
                     <div class="impressum-info-item">
                         Max Mustermann<br>
                         SHC Consulting GmbH<br>
-                        Musterstraße 12<br>
-                        12345 Berlin
+                        <span data-field="contactInfoAdress">Musterstraße 123<br>10115 Berlin<br>Deutschland</span>
                     </div>
                 </div>
             </div>
@@ -161,6 +158,7 @@
     </footer>
 
     <!--script-tag-->
+    <script src="./js/cms/cockpit.js"></script>
     <script src="./js/mobilemenu.js"></script>
     <script src="./js/darkmode.js"></script>
 
