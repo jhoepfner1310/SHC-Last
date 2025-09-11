@@ -620,7 +620,7 @@ p {
 }
 
 .hero-wrapper h1{
-    font-size: 3.5vmax;
+    font-size: 4.5vmax;
 }
 
 /* Buttons */
@@ -794,7 +794,7 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .quote-box {
-    min-height: 20vmax;
+    height: 20vmax;
     width: 100%;
     border-radius: var(--border-radius);
     display: flex;
@@ -1443,8 +1443,8 @@ body[data-theme="dark"] .cta-button-nav {
     }
 
     .quote-box{
-        min-height: 12.5vmax;
-        min-width: 443px;
+        height: 15vmax;
+        width: 500px;
     }
 
     .hero-bottom {
