@@ -159,11 +159,13 @@ function initializeMainPage() {
 
 function initializeImpressumPage() {
   loadCMS('contactInfo');
+  loadCMS('vertretungsberechtigter');
   loadCMS('footerLinks'); // Footer links might be useful on impressum page too
 }
 
 function initializeDatenschutzPage() {
   loadCMS('contactInfo');
+  loadCMS('vertretungsberechtigter');
   loadCMS('footerLinks'); // Footer links might be useful on datenschutz page too
 }
 

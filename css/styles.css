@@ -621,7 +621,7 @@ p {
 }
 
 .hero-wrapper h1{
-    font-size: 4vmax;
+    font-size: 4.5vmax;
 }
 
 /* Buttons */
@@ -1132,6 +1132,10 @@ body[data-theme="dark"] .cta-button-nav {
 
     .hero-wrapper{
         gap: 5vh;
+    }
+
+    .hero-wrapper h1{
+        font-size: 4vmax;
     }
 
     .qualifications-wrapper {
