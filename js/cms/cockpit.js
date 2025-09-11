@@ -144,3 +144,48 @@ async function loadCollection(collectionName) {
     console.error(`Failed to load collection "${collectionName}":`, err);
   }
 }
+
+// Page-specific initialization functions
+function initializeMainPage() {
+  loadCMS('contactInfo');
+  loadCollection('serviceCards');
+  loadCollection('quotes');
+  loadCollection('qualificationsCardFront');
+  loadCollection('whyUs');
+  loadCollection('qualificationsCardBack');
+  loadCMS('aboutUs');
+  loadCMS('footerLinks');
+}
+
+function initializeImpressumPage() {
+  loadCMS('contactInfo');
+  loadCMS('footerLinks'); // Footer links might be useful on impressum page too
+}
+
+function initializeDatenschutzPage() {
+  loadCMS('contactInfo');
+  loadCMS('footerLinks'); // Footer links might be useful on datenschutz page too
+}
+
+// Universal initialization function that detects page type
+function initializePage() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+  switch(currentPage) {
+    case 'index.html':
+    case '':
+      initializeMainPage();
+      break;
+    case 'impressum.html':
+      initializeImpressumPage();
+      break;
+    case 'datenschutz.html':
+      initializeDatenschutzPage();
+      break;
+    default:
+      // For any other page, load basic CMS content
+      loadCMS('contactInfo');
+      loadCMS('footerLinks');
+      break;
+  }
+}
