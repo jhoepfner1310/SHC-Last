@@ -582,9 +582,10 @@ p {
     margin-bottom: 1rem;
     text-align: justify;
     text-justify: inter-word;
-    font-weight: 450;
+    font-weight: 452.5;
     hyphens: auto;
-    line-height: 1.5;
+    line-height: 1.8;
+    color: #000000c9;
 }
 
 .section{
@@ -620,7 +621,7 @@ p {
 }
 
 .hero-wrapper h1{
-    font-size: 4.5vmax;
+    font-size: 4vmax;
 }
 
 /* Buttons */
