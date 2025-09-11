@@ -44,7 +44,7 @@ body.no-scroll {
 
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -580,8 +580,11 @@ h4 {
 
 p {
     margin-bottom: 1rem;
-    font-weight: 700;
-    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+    font-weight: 450;
+    hyphens: auto;
+    line-height: 1.5;
 }
 
 .section{
@@ -892,6 +895,8 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .service-content {
+    display: flex;
+    flex-direction: column;
     flex: 0 0 85%;
 }
 
@@ -1541,11 +1546,6 @@ body[data-theme="dark"] .cta-button-nav {
     .services-wrapper{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .service-card{
-        flex: 1 1 calc(25% - 1.5rem);
-        padding-bottom: 30vh;
     }
 
     .why-us-card {
