@@ -1,11 +1,13 @@
 const aboutButton = document.getElementById("about-us-button");
 const aboutContent = document.getElementById("aboutUsContent");
+const aboutUsTitle = document.getElementById("aboutUsTitle");
 
 let buttonClicked = false;
 
 function toggleContent() {
     if (!buttonClicked) {
         aboutContent.style.display = "none";
+        aboutUsTitle.style.display = "none";
         buttonClicked = true;
 
         //Klick Animation
@@ -14,6 +16,7 @@ function toggleContent() {
 
     } else {
         aboutContent.style.display = "block";
+        aboutUsTitle.style.display = "block";
         buttonClicked = false;
 
         //Klick Animation
