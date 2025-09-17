@@ -47,6 +47,7 @@ body {
     font-family: "Bricolage Grotesque", sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /*Deko-Elemente*/
@@ -947,7 +948,6 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .why-us-card:hover{
-    transform: scale(1.05);
     cursor:pointer;
 }
 
@@ -992,7 +992,7 @@ body[data-theme="dark"] .cta-button-nav {
 .why-us-content h3 {
     position: absolute;
     margin-bottom: 0;
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .why-us-content p {
@@ -1000,21 +1000,6 @@ body[data-theme="dark"] .cta-button-nav {
     z-index: -10;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: translateY(-10px);
-}
-
-.why-us-card:hover .why-us-content h3 {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0s; /* Sofortiges Ausblenden beim Hover */
-}
-
-.why-us-card:hover .why-us-content p {
-    opacity: 1;
-    max-height: 200px;
-    padding-top: 1rem;
-    margin-bottom: 0;
-    transform: translateY(0);
 }
 
 /* About Section */
@@ -2218,10 +2203,8 @@ html {
 }
 
 .scroll-reveal.why-us-card:hover {
-    transform: scale(1.05) !important;
+    cursor: pointer;
 }
-
-
 
 .scroll-reveal.about-image:hover {
     transform: scale(1.05) !important;
