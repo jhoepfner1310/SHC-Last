@@ -6,21 +6,18 @@ let buttonClicked = true;
 
 function toggleContent() {
     if (!buttonClicked) {
-        aboutContent.style.display = "none";
-        aboutUsTitle.style.display = "none";
-        aboutContent.style.opacity = "0";
-        aboutUsTitle.style.opacity = "0";
+        // Ausblenden mit CSS-Klassen
+        aboutContent.classList.remove("show");
+        aboutUsTitle.classList.remove("show");
         buttonClicked = true;
 
         //Klick Animation
         stylesAnimation();
 
-
     } else {
-        aboutContent.style.display = "block";
-        aboutUsTitle.style.display = "block";
-        aboutContent.style.opacity = "1";
-        aboutUsTitle.style.opacity = "1";
+        // Einblenden mit CSS-Klassen
+        aboutContent.classList.add("show");
+        aboutUsTitle.classList.add("show");
         buttonClicked = false;
 
         //Klick Animation

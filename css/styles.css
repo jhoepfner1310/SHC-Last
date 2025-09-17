@@ -1083,10 +1083,27 @@ body[data-theme="dark"] .cta-button-nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
 }
 
+.about-us-button:hover {
+    cursor: pointer;
+}
+
 #aboutUsContent, #aboutUsTitle {
-    display: none;
     opacity: 0;
-    transition: opacity 3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-20px);
+    transition: all 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#aboutUsContent.show, #aboutUsTitle.show {
+    opacity: 1;
+    max-height: 950px; /* Ausreichend groß für den Content */
+    transform: translateY(0);
+    margin-bottom: 1rem;
+    padding-top: inherit;
 }
 
 /*Qualifications*/
