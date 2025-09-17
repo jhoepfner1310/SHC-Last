@@ -10,6 +10,10 @@
     <!--dependency für kursive Schrift-->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
     <!--E-mail-Formular script-tag-->
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -148,40 +152,56 @@
         <h2 class="scroll-reveal">Unsere Services</h2>
         <div class="wrapper services-wrapper">
 
-            <div class="service-card scroll-reveal">
-                <div class="service-icon" id="service-icon-1">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="service-content">
-                    <h3 data-collection="serviceCards" data-field="0.Title">Strategische Beratung</h3>
-                    <p data-collection="serviceCards" data-field="0.content">Wir entwickeln maßgeschneiderte Strategien für Ihr Unternehmen und unterstützen Sie bei der erfolgreichen Umsetzung Ihrer Geschäftsziele.</p>
-                </div>
-            </div>
-            <div class="service-card scroll-reveal">
-                <div class="service-icon" id="service-icon-2">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="service-content">
-                    <h3 data-collection="serviceCards" data-field="1.Title">Organisationsentwicklung</h3>
-                    <p data-collection="serviceCards" data-field="1.content">Optimierung Ihrer Unternehmensstrukturen und Prozesse für mehr Effizienz und nachhaltige Leistungssteigerung.</p>
+            <div class="flip-card scroll-reveal">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon" id="service-icon-1">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-collection="serviceCards" data-field="0.Title">Strategische Beratung</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p data-collection="serviceCards" data-field="0.content">Wir entwickeln maßgeschneiderte Strategien für Ihr Unternehmen und unterstützen Sie bei der erfolgreichen Umsetzung Ihrer Geschäftsziele.</p>
+                    </div>
                 </div>
             </div>
-            <div class="service-card scroll-reveal">
-                <div class="service-icon" id="service-icon-3">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <div class="service-content">
-                    <h3 data-collection="serviceCards" data-field="2.Title">Change Management</h3>
-                    <p data-collection="serviceCards" data-field="2.content">Professionelle Begleitung bei Veränderungsprozessen und Transformation zur Stärkung Ihrer Wettbewerbsfähigkeit.</p>
+            <div class="flip-card scroll-reveal">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon" id="service-icon-2">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-collection="serviceCards" data-field="1.Title">Organisationsentwicklung</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p data-collection="serviceCards" data-field="1.content">Optimierung Ihrer Unternehmensstrukturen und Prozesse für mehr Effizienz und nachhaltige Leistungssteigerung.</p>
+                    </div>
                 </div>
             </div>
-            <div class="service-card scroll-reveal">
-                <div class="service-icon" id="service-icon-4">
-                    <i class="fas fa-handshake"></i>
+            <div class="flip-card scroll-reveal">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon" id="service-icon-3">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 data-collection="serviceCards" data-field="2.Title">Change Management</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p data-collection="serviceCards" data-field="2.content">Professionelle Begleitung bei Veränderungsprozessen und Transformation zur Stärkung Ihrer Wettbewerbsfähigkeit.</p>
+                    </div>
                 </div>
-                <div class="service-content">
-                    <h3 data-collection="serviceCards" data-field="3.Title">Digitalisierung</h3>
-                    <p data-collection="serviceCards" data-field="3.content">Beratung und Umsetzung digitaler Lösungen zur Modernisierung Ihrer Geschäftsprozesse und Arbeitsabläufe.</p>
+            </div>
+            <div class="flip-card scroll-reveal">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon" id="service-icon-4">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 data-collection="serviceCards" data-field="3.Title">Digitalisierung</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p data-collection="serviceCards" data-field="3.content">Beratung und Umsetzung digitaler Lösungen zur Modernisierung Ihrer Geschäftsprozesse und Arbeitsabläufe.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,10 +222,10 @@
             <img class="about-image scroll-reveal" src="./images/about-us-2.jpg" alt="SHC Consulting Team">
             <div class="about-content scroll-reveal">
                 <div class="about-icon">
-                    <i class="fas fa-users"></i>
+                    <button class="about-us-button" id="about-us-button"><i class="fas fa-users"></i></button>
                 </div>
-                <h3 data-field="aboutUsTitle">Ihre Partner für nachhaltigen Erfolg</h3>
-                <p data-field="aboutUsContent">Bei SHC Consulting verbinden wir jahrelange Erfahrung mit innovativen Lösungsansätzen. Unser Team aus erfahrenen Beratern unterstützt Sie bei der Entwicklung und Umsetzung Ihrer Unternehmensziele.</p>
+                <h3 id="aboutUsTitle" data-field="aboutUsTitle">Ihre Partner für nachhaltigen Erfolg</h3>
+                <p id="aboutUsContent" data-field="aboutUsContent">Bei SHC Consulting verbinden wir jahrelange Erfahrung mit innovativen Lösungsansätzen. Unser Team aus erfahrenen Beratern unterstützt Sie bei der Entwicklung und Umsetzung Ihrer Unternehmensziele.</p>
             </div>
         </div>
     </section>
@@ -312,6 +332,10 @@
         </div>
     </section>
 
+    <section class="section" id="testimonials">
+        
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <!-- Hintergrundelemente für Contact -->
@@ -401,6 +425,7 @@
     <script src="./js/scroll-reveal.js"></script>
     <script src="./js/cms/cockpit.js"></script>
     <script src="./js/email.js"></script>
+    <script src="./js/about-button.js"></script>
 
 </body>
 </html> 

@@ -44,7 +44,7 @@ body.no-scroll {
 
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Bricolage Grotesque", sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -852,9 +852,11 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .services-wrapper {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
     margin-top: 0;
-    gap: 4vh;
 }
 
 .service-card {
@@ -899,6 +901,25 @@ body[data-theme="dark"] .cta-button-nav {
     display: flex;
     flex-direction: column;
     flex: 0 0 85%;
+}
+
+/* Service Flip-Card specific styles */
+.flip-card .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    flex: none;
+}
+
+.flip-card-front h3 {
+    margin-bottom: 0;
+    flex: none;
+}
+
+.flip-card-back p {
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: normal;
 }
 
 /* Why Us Section */
@@ -1004,6 +1025,22 @@ body[data-theme="dark"] .cta-button-nav {
     margin-bottom: 1rem;
 }
 
+.about-us-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.35s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    width: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
 /*Qualifications*/
 
 .qualifications-wrapper {
@@ -1059,13 +1096,22 @@ body[data-theme="dark"] .cta-button-nav {
     transform: rotateY(180deg);
 }
 
-/* Individuelle Farben für die Flip-Cards */
-.flip-card:nth-child(1) .flip-card-back {
+/* Individuelle Farben für die Qualifications Flip-Cards */
+#qualifications .flip-card:nth-child(1) .flip-card-back {
     background-color: var(--grün);
 }
 
-.flip-card:nth-child(2) .flip-card-back {
+#qualifications .flip-card:nth-child(2) .flip-card-back {
     background-color: var(--secondary-color);
+}
+
+/* Individuelle Farben für die Services Flip-Cards */
+#services .flip-card:nth-child(1) .flip-card-back,
+#services .flip-card:nth-child(2) .flip-card-back,
+#services .flip-card:nth-child(3) .flip-card-back,
+#services .flip-card:nth-child(4) .flip-card-back {
+    background-color: var(--white);
+    color: var(--primary-color);
 }
 
 .flip-card-image {
@@ -1529,8 +1575,10 @@ body[data-theme="dark"] .cta-button-nav {
 @media (min-width: 768px) and (max-width: 1200px){
 
     .services-wrapper{
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
         margin: 2rem;
     }
 
@@ -1550,8 +1598,10 @@ body[data-theme="dark"] .cta-button-nav {
     }
 
     .services-wrapper{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 1400px;
     }
 
     .why-us-card {
