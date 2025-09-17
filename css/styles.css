@@ -2102,6 +2102,26 @@ body[data-theme="dark"] .flip-card-back {
     color: #ffffff;  /* Text auf der Rückseite bleibt weiß */
 }
 
+/* Dark Mode Services Flip-Cards - Dunkle Rückseiten */
+body[data-theme="dark"] #services .flip-card:nth-child(1) .flip-card-back,
+body[data-theme="dark"] #services .flip-card:nth-child(2) .flip-card-back,
+body[data-theme="dark"] #services .flip-card:nth-child(3) .flip-card-back,
+body[data-theme="dark"] #services .flip-card:nth-child(4) .flip-card-back {
+    background-color: var(--secondary-dark-color);
+    color: #ffffff;
+}
+
+/* Dark Mode Services Flip-Cards - Weißer Text auf Rückseiten */
+body[data-theme="dark"] #services .flip-card-back p {
+    color: #ffffff !important;
+}
+
+/* Dark Mode About Content - Unsichtbar machen */
+body[data-theme="dark"] .about-content {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
 /* Zusätzliche Sichtbarkeit für Dark Mode */
 body[data-theme="dark"] .animated-background {
     z-index: -3; /* Noch höherer z-index im Dark Mode */
