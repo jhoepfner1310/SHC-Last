@@ -2315,7 +2315,7 @@ body[data-theme="dark"] #qualifications {
 
 #testimonials-desktop {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 65vh;
 }
 
@@ -2370,6 +2370,9 @@ body[data-theme="dark"] #qualifications {
 #testimonials-text-container {
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2vmax;
     border-radius: 10px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
@@ -2377,7 +2380,83 @@ body[data-theme="dark"] #qualifications {
 
 #testimonials-top-lower p {
     font-size: 1.25rem;
+    font-weight: 400;
+    font-family: 'Merryweather', serif;
+    font-style: italic;
 }
+
+#testimonials-bottom {
+    height: 100%;
+    width: 20%;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#testimonials-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+}
+
+#testimonials-logo img {
+    width: 15vh;
+    height: 15vh;
+    filter: drop-shadow(0 8.5px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* Gemeinsame Button-Klasse */
+.testimonial-btn {
+    border-radius: 10px;
+    color: var(--white);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Spezifische Button-IDs */
+#testimonial-prev-btn {
+    width: 37.5%;
+    background-color: var(--secondary-color);
+}
+
+#testimonial-next-btn {
+    width: 37.5%;
+    background-color: var(--grün);
+}
+
+#testimonial-pause-btn {
+    width: 45%;
+    background-color: #c2c2c2;
+}
+
+#testimonials-dots {
+    display: flex;
+    justify-content: center;
+    height: 5%;
+}
+
+#testimonials-navigation {
+    display: flex;
+    justify-content: space-evenly;
+    height: 10%
+}
+
+#testimonials-navigation i {
+    font-size: 1.25rem;
+}
+
+#testimonials-pause {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+
+
 
 
 
