@@ -1,6 +1,7 @@
 const quoteElement = document.querySelector('.quote-text');
 const authorElement = document.querySelector('.quote-author');
 const quoteBox = document.querySelector('.quote-box');
+const quoteContainer = document.getElementById('quote-container');
 const welcomeText = document.getElementById('welcome');
 
 // Zitate werden über die bestehende loadCollection() Funktion geladen
@@ -28,9 +29,8 @@ function showNextQuote() {
   // Nur weitermachen wenn Zitate vorhanden sind
   if (quotes.length === 0) return;
   
-  // Ausblenden
-  quoteElement.style.opacity = 0;
-  authorElement.style.opacity = 0;
+  // Ganzen Container ausblenden
+  quoteContainer.style.opacity = 0;
 
   // Warten, dann Inhalt wechseln und wieder einblenden
   setTimeout(() => {
@@ -38,8 +38,8 @@ function showNextQuote() {
     quoteElement.textContent = quotes[index].text;
     authorElement.textContent = quotes[index].author;
 
-    quoteElement.style.opacity = 1;
-    authorElement.style.opacity = 1;
+    // Ganzen Container wieder einblenden
+    quoteContainer.style.opacity = 1;
     
     if(firstCycle){
       setGap();

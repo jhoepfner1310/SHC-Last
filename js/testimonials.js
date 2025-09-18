@@ -21,35 +21,37 @@ let isPlaying = true;
 let slideInterval;
 
 // Function to update testimonial text
-function updateTestimonialText() {
-    // Fade out slowly
+function updateTestimonialText(isManual = false) {
+    // Fade out
     TESTIMONIAL_TEXT_CONTAINER.style.opacity = '0';
+    
+    const delay = isManual ? 100 : 1000; // Schnell für Buttons, langsam für Autoplay
     
     setTimeout(() => {
         TESTIMONIAL_TEXT_CONTAINER.textContent = TESTIMONIALS[currentIndex];
         
-        // Fade in slowly
+        // Fade in
         setTimeout(() => {
             TESTIMONIAL_TEXT_CONTAINER.style.opacity = '1';
-        }, 600);
-    }, 600);
+        }, 50);
+    }, delay);
 }
 
 // Function to go to next testimonial
-function nextTestimonial() {
+function nextTestimonial(isManual = false) {
     currentIndex = (currentIndex + 1) % TESTIMONIALS.length;
-    updateTestimonialText();
+    updateTestimonialText(isManual);
 }
 
 // Function to go to previous testimonial
 function prevTestimonial() {
     currentIndex = (currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length;
-    updateTestimonialText();
+    updateTestimonialText(true); // Manual = schnell
 }
 
 // Function to start auto-play (matching citations.js timing)
 function startAutoPlay() {
-    slideInterval = setInterval(nextTestimonial, 8000);
+    slideInterval = setInterval(() => nextTestimonial(false), 8000); // Autoplay = langsam
     isPlaying = true;
 }
 
@@ -73,7 +75,7 @@ function togglePause() {
 // Initialize testimonials
 function initTestimonials() {
     // Set initial text
-    updateTestimonialText();
+    updateTestimonialText(false);
     
     // Add slow and smooth opacity transition (matching citations.js)
     TESTIMONIAL_TEXT_CONTAINER.style.transition = 'opacity 0.6s ease-in-out';
@@ -88,7 +90,7 @@ TESTIMONIAL_PREV_BTN.addEventListener('click', () => {
 });
 
 TESTIMONIAL_NEXT_BTN.addEventListener('click', () => {
-    nextTestimonial();
+    nextTestimonial(true); // Manual = schnell
 });
 
 TESTIMONIAL_PAUSE_BTN.addEventListener('click', () => {
