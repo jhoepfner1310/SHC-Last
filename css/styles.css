@@ -998,6 +998,7 @@ body[data-theme="dark"] .cta-button-nav {
 }
 
 .why-us-content p {
+    text-align: center;
     opacity: 0;
     z-index: -10;
     overflow: hidden;
