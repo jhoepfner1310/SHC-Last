@@ -1214,6 +1214,86 @@ body[data-theme="dark"] .cta-button-nav {
     left: 0;
 }
 
+
+/* testimonials-Sektion */
+#testimonials-desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+#testimonials-top {
+    width: 90%;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+}
+
+#testimonials-top-upper {
+    display: flex;
+}
+
+#testimonials-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 40px;
+}
+
+#testimonials-img-container img {
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+#icon-testimonials {
+    width: 25%;
+    height: 100%;
+    padding: 4.5vmax 0 0 5vmax;
+}
+
+#icon-testimonials i {
+    font-size: 7.5vmax;
+    color: var(--grün);
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+}
+
+#testimonials-text-container {
+    padding: 0 20px 15px 20px;
+}
+
+#testimonials-text-container p {
+    text-align: center;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: 'Merryweather', serif;
+    font-style: italic;
+}
+
+#testimonials-bottom {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+}
+
+#testimonials-logo {
+    height: 30px;
+    aspect-ratio: 1 / 1;
+}
+
+#testimonials-logo img {
+    height: 100%;
+}
+
+
 /* Desktop Layout für Flip-Cards */
 @media (min-width: 768px) {
 
@@ -2310,166 +2390,172 @@ body[data-theme="dark"] #qualifications {
     background-color: transparent;
 }
 
-#testimonials {
-    padding: 5vmax;
-    display: flex;
-    justify-content: space-evenly;
+@media (min-width: 768px) {
+
+    #testimonials {
+        padding: 5vmax;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #testimonials-desktop {
+        display: flex;
+        justify-content: space-evenly;
+        height: 65vh;
+    }
+
+    #testimonials-top {
+        width: 45%;
+        height: 100%;
+    }
+
+    #icon-testimonials {
+        width: 25%;
+        height: 100%;
+        padding: 4.5vmax 0 0 5vmax;
+    }
+
+    #icon-testimonials i {
+        font-size: 7.5vmax;
+        color: var(--grün);
+        text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);;
+    }
+
+    #testimonials-img-container {
+        width: 75%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 0 5vmax 0 0 ;
+    }
+
+    #testimonials-img-container img {
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+        width: 70%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+    }
+
+    #testimonials-bottom {
+        width: 25%;
+    }
+
+    #testimonials-top-upper {
+        height: 60%;
+        width: 100%;
+        display: flex;
+    }
+
+    #testimonials-top-lower {
+        height: 40%;
+        width: 100%;
+        padding: 2vmax;
+    }
+
+    #testimonials-text-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2vmax;
+        border-radius: 10px;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    #testimonials-top-lower p {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 400;
+        font-family: 'Merryweather', serif;
+        font-style: italic;
+    }
+
+    #testimonials-bottom {
+        height: 100%;
+        width: 20%;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #testimonials-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45%;
+    }
+
+    #testimonials-logo img {
+        width: 15vh;
+        height: 15vh;
+        filter: drop-shadow(0 8.5px 4px rgba(0, 0, 0, 0.4));
+    }
+
+    /* Gemeinsame Button-Klasse */
+    .testimonial-btn {
+        border-radius: 10px;
+        color: var(--white);
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Spezifische Button-IDs */
+    #testimonial-prev-btn {
+        width: 37.5%;
+        background-color: var(--secondary-color);
+    }
+
+    #testimonial-next-btn {
+        width: 37.5%;
+        background-color: var(--grün);
+    }
+
+    #testimonial-pause-btn {
+        width: 45%;
+        background-color: #c2c2c2;
+    }
+
+    #testimonials-dots {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+    }
+
+    #testimonials-navigation {
+        display: flex;
+        justify-content: space-evenly;
+        height: 10%
+    }
+
+    #testimonials-navigation i {
+        font-size: 1.25rem;
+    }
+
+    #testimonials-pause {
+        display: flex;
+        justify-content: center;
+        height: 10%;
+    }
+
+    /* Quote Container for smooth animations */
+    .quote-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 1s ease-in-out;
+    }
+
 }
 
-#testimonials-desktop {
-    display: flex;
-    justify-content: space-evenly;
-    height: 65vh;
-}
 
-#testimonials-top {
-    width: 45%;
-    height: 100%;
-}
-
-#icon-testimonials {
-    width: 25%;
-    height: 100%;
-    padding: 4.5vmax 0 0 5vmax;
-}
-
-#icon-testimonials i {
-    font-size: 7.5vmax;
-    color: var(--grün);
-    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);;
-}
-
-#testimonials-img-container {
-    width: 75%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding: 0 5vmax 0 0 ;
-}
-
-#testimonials-img-container img {
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-    width: 70%;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-}
-
-#testimonials-bottom {
-    width: 25%;
-}
-
-#testimonials-top-upper {
-    height: 60%;
-    width: 100%;
-    display: flex;
-}
-
-#testimonials-top-lower {
-    height: 40%;
-    width: 100%;
-    padding: 2vmax;
-}
-
-#testimonials-text-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2vmax;
-    border-radius: 10px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-}
-
-#testimonials-top-lower p {
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: 400;
-    font-family: 'Merryweather', serif;
-    font-style: italic;
-}
-
-#testimonials-bottom {
-    height: 100%;
-    width: 20%;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-#testimonials-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45%;
-}
-
-#testimonials-logo img {
-    width: 15vh;
-    height: 15vh;
-    filter: drop-shadow(0 8.5px 4px rgba(0, 0, 0, 0.4));
-}
-
-/* Gemeinsame Button-Klasse */
-.testimonial-btn {
-    border-radius: 10px;
-    color: var(--white);
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Spezifische Button-IDs */
-#testimonial-prev-btn {
-    width: 37.5%;
-    background-color: var(--secondary-color);
-}
-
-#testimonial-next-btn {
-    width: 37.5%;
-    background-color: var(--grün);
-}
-
-#testimonial-pause-btn {
-    width: 45%;
-    background-color: #c2c2c2;
-}
-
-#testimonials-dots {
-    display: flex;
-    justify-content: center;
-    height: 5%;
-}
-
-#testimonials-navigation {
-    display: flex;
-    justify-content: space-evenly;
-    height: 10%
-}
-
-#testimonials-navigation i {
-    font-size: 1.25rem;
-}
-
-#testimonials-pause {
-    display: flex;
-    justify-content: center;
-    height: 10%;
-}
-
-/* Quote Container for smooth animations */
-.quote-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease-in-out;
-}
 
 
 
