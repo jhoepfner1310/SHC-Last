@@ -820,6 +820,7 @@ body[data-theme="dark"] .cta-button-nav {
 
 .quote-author{
     transition: opacity 1.5s ease-in-out;
+    width: 100%;
     text-align: right;
     font-style: normal;
     font-weight: 525;
@@ -2596,6 +2597,7 @@ body[data-theme="dark"] #qualifications {
         justify-content: center;
         height: 10%;
     }
+}
 
     /* Quote Container for smooth animations */
     .quote-container {
@@ -2608,7 +2610,7 @@ body[data-theme="dark"] #qualifications {
         transition: opacity 1s ease-in-out;
     }
 
-}
+
 
 
 
