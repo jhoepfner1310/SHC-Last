@@ -2460,7 +2460,7 @@ body[data-theme="dark"] #testimonials {
 /* Testimonials Dark Mode */
 @media (max-width: 768px) {
     #testimonials-top {
-        background-color: var(--white);
+        background-color: var(--secondary-dark-color);
     }
 }
 
