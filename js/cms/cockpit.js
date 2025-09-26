@@ -126,6 +126,18 @@ async function loadCollection(collectionName) {
       return;
     }
 
+    // Spezielle Behandlung für quotes Collection
+    if (collectionName === 'quotes' && typeof initializeQuotes === 'function') {
+      initializeQuotes(items);
+      return; // Früh beenden, da quotes nicht über data-collection Attribute funktionieren
+    }
+
+    // Spezielle Behandlung für testimonials Collection
+    if (collectionName === 'testimonials' && typeof initializeTestimonials === 'function') {
+      initializeTestimonials(items);
+      return; // Früh beenden, da testimonials nicht über data-collection Attribute funktionieren
+    }
+
     // Find all elements with data-collection attribute matching this collection
     document.querySelectorAll(`[data-collection="${collectionName}"]`).forEach(el => {
       const field = el.dataset.field;
@@ -154,15 +166,16 @@ async function loadCollection(collectionName) {
 // Page-specific initialization functions
 function initializeMainPage() {
   loadCMS('contactInfo');
-  loadCollection('serviceCards');
-  loadCollection('quotes');
-  loadCollection('qualificationsCardFront');
-  loadCollection('whyUs');
-  loadCollection('qualificationsCardBack');
-  loadCollection('qualificationsCardTitle');
-  loadCollection('qualificationcard2back');
-  loadCMS('aboutUs');
-  loadCMS('footerLinks');
+      loadCollection('serviceCards');
+    loadCollection('quotes');
+    loadCollection('qualificationsCardFront');
+    loadCollection('whyUs');
+    loadCollection('qualificationsCardBack');
+    loadCollection('qualificationsCardTitle');
+    loadCollection('qualificationcard2back');
+    loadCollection('testimonials');
+    loadCMS('aboutUs');
+    loadCMS('footerLinks');
 }
 
 function initializeImpressumPage() {

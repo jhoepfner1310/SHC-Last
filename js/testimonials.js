@@ -1,11 +1,5 @@
-// Testimonials Data Array
-const TESTIMONIALS = [
-    "Wir fanden die beiden super lieb, kompetent und empathisch. Die Beratung war genau das, was unser Unternehmen gebraucht hat.",
-    "Professionelle Beratung auf höchstem Niveau. SHC Consulting hat uns dabei geholfen, unsere Geschäftsprozesse erheblich zu optimieren.",
-    "Sehr empfehlenswert! Das Team von SHC Consulting bringt nicht nur Fachwissen mit, sondern auch die nötige Leidenschaft für den Erfolg ihrer Kunden.",
-    "Dank der strategischen Beratung konnten wir unsere Umsätze um 40% steigern. Vielen Dank für die hervorragende Zusammenarbeit!",
-    "Kompetent, zuverlässig und immer erreichbar. SHC Consulting ist der ideale Partner für nachhaltige Unternehmensentwicklung."
-];
+// Testimonials from CMS Collection
+let testimonials = [];
 
 // Testimonials Button Constants
 const TESTIMONIAL_PREV_BTN = document.getElementById('testimonial-prev-btn');
@@ -20,15 +14,30 @@ let currentIndex = 0;
 let isPlaying = true;
 let slideInterval;
 
+// Diese Funktion wird von loadCollection() aufgerufen
+function initializeTestimonials(testimonialsData) {
+    // Daten in das gewünschte Format umwandeln
+    testimonials = testimonialsData.map(testimonial => testimonial.testimonialText);
+    
+    // Erste Anzeige und Autoplay starten
+    if (testimonials.length > 0) {
+        updateTestimonialText(false);
+        TESTIMONIAL_TEXT_CONTAINER.style.transition = 'opacity 0.6s ease-in-out';
+        startAutoPlay();
+    }
+}
+
 // Function to update testimonial text
 function updateTestimonialText(isManual = false) {
+    if (testimonials.length === 0) return;
+    
     // Fade out
     TESTIMONIAL_TEXT_CONTAINER.style.opacity = '0';
     
     const delay = isManual ? 100 : 1000; // Schnell für Buttons, langsam für Autoplay
     
     setTimeout(() => {
-        TESTIMONIAL_TEXT_CONTAINER.textContent = TESTIMONIALS[currentIndex];
+        TESTIMONIAL_TEXT_CONTAINER.textContent = testimonials[currentIndex];
         
         // Fade in
         setTimeout(() => {
@@ -39,13 +48,15 @@ function updateTestimonialText(isManual = false) {
 
 // Function to go to next testimonial
 function nextTestimonial(isManual = false) {
-    currentIndex = (currentIndex + 1) % TESTIMONIALS.length;
+    if (testimonials.length === 0) return;
+    currentIndex = (currentIndex + 1) % testimonials.length;
     updateTestimonialText(isManual);
 }
 
 // Function to go to previous testimonial
 function prevTestimonial() {
-    currentIndex = (currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length;
+    if (testimonials.length === 0) return;
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
     updateTestimonialText(true); // Manual = schnell
 }
 
@@ -72,18 +83,6 @@ function togglePause() {
     }
 }
 
-// Initialize testimonials
-function initTestimonials() {
-    // Set initial text
-    updateTestimonialText(false);
-    
-    // Add slow and smooth opacity transition (matching citations.js)
-    TESTIMONIAL_TEXT_CONTAINER.style.transition = 'opacity 0.6s ease-in-out';
-    
-    // Start auto-play
-    startAutoPlay();
-}
-
 // Event Listeners for Testimonial Buttons
 TESTIMONIAL_PREV_BTN.addEventListener('click', () => {
     prevTestimonial();
@@ -96,6 +95,3 @@ TESTIMONIAL_NEXT_BTN.addEventListener('click', () => {
 TESTIMONIAL_PAUSE_BTN.addEventListener('click', () => {
     togglePause();
 });
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initTestimonials);
