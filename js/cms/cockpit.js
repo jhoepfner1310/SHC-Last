@@ -120,6 +120,12 @@ async function loadCollection(collectionName) {
       return; // Früh beenden, da quotes nicht über data-collection Attribute funktionieren
     }
 
+    // Spezielle Behandlung für qualifications Listenelemente
+    if ((collectionName === 'qualificationsCardBack' || collectionName === 'qualificationcard2back') && typeof initializeQualificationBulletPoints === 'function') {
+      initializeQualificationBulletPoints(items, collectionName);
+      return;
+    }
+
     // Find all elements with data-collection attribute matching this collection
     document.querySelectorAll(`[data-collection="${collectionName}"]`).forEach(el => {
       const field = el.dataset.field;
@@ -153,6 +159,8 @@ function initializeMainPage() {
   loadCollection('qualificationsCardFront');
   loadCollection('whyUs');
   loadCollection('qualificationsCardBack');
+  loadCollection('qualificationsCardTitle');
+  loadCollection('qualificationcard2back');
   loadCMS('aboutUs');
   loadCMS('footerLinks');
 }
