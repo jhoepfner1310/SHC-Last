@@ -2539,13 +2539,13 @@ body[data-theme="dark"] .testimonial-btn {
     }
 
     #testimonials-top-upper {
-        height: 60%;
+        height: 33%;
         width: 100%;
         display: flex;
     }
 
     #testimonials-top-lower {
-        height: 40%;
+        height: 65%;
         width: 100%;
         padding: 2vmax;
     }

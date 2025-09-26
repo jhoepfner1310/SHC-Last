@@ -39,6 +39,11 @@ function updateTestimonialText(isManual = false) {
     setTimeout(() => {
         TESTIMONIAL_TEXT_CONTAINER.textContent = testimonials[currentIndex];
         
+        // Schriftgröße neu berechnen nach Textwechsel
+        if (typeof recalculateOnTextChange === 'function') {
+            recalculateOnTextChange();
+        }
+        
         // Fade in
         setTimeout(() => {
             TESTIMONIAL_TEXT_CONTAINER.style.opacity = '1';
