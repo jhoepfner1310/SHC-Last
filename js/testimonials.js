@@ -34,7 +34,7 @@ function updateTestimonialText(isManual = false) {
     // Fade out
     TESTIMONIAL_TEXT_CONTAINER.style.opacity = '0';
     
-    const delay = isManual ? 100 : 1000; // Schnell für Buttons, langsam für Autoplay
+    const delay = 1000; // Schnell für Buttons, langsam für Autoplay
     
     setTimeout(() => {
         TESTIMONIAL_TEXT_CONTAINER.textContent = testimonials[currentIndex];
